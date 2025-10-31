@@ -34,6 +34,7 @@ public class Dev {
 
     public void inscreverBootcamp(Bootcamp bootcamp){
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
+        bootcamp.getDevsInscritos().add(this);
     }
 
     public void pogredir(){
@@ -47,10 +48,12 @@ public class Dev {
         }
     }
 
-    public void calcularXP(){}
+    public double calcularXP(){
+        return this.conteudosConcluidos.stream().mapToDouble(conteudo -> conteudo.calcularXP()).sum();
+    }
 
-        @Override
-        public  boolean equals(Object obj) {
+    @Override
+    public  boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Dev dev = (Dev) obj;

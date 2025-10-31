@@ -9,11 +9,8 @@ public class Bootcamp {
     private final LocalDate datainicial = LocalDate.now();
     private final LocalDate datafinal = datainicial.plusDays(45);
     private Set<Dev> devsInscritos = new HashSet<>();
-    private Set<Dev> conteudos = new LinkedHashSet<>();
+    private Set<Conteudo> conteudos = new LinkedHashSet<>();
 
-    public Set<Dev> getConteudos() {
-        return conteudos;
-    }
 
     public LocalDate getDatafinal() {
         return datafinal;
@@ -35,7 +32,11 @@ public class Bootcamp {
         return nome;
     }
 
-    public void setConteudos(Set<Dev> conteudos) {
+    public Set<Conteudo> getConteudos() {
+        return conteudos;
+    }
+
+    public void setConteudos(Set<Conteudo> conteudos) {
         this.conteudos = conteudos;
     }
 
